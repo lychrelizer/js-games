@@ -1,6 +1,6 @@
 # BreakOut
 
-> [!INFO]
+> [!NOTE]
 > This game works entirely with HTML-Elements. It doesn't utilize the `<canvas>`-element.
 
 ## Description
