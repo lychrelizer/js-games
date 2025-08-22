@@ -19,6 +19,7 @@
   --color-blue: #02a8d3;
   --color-purply: #2e70e4;
   --color-coral: #e94a5b;
+  --color-game: #16254e;
 }
 
 * {
@@ -42,4 +43,55 @@ body {
 header {
   background-image: var(--header-background-gradient);
   border-bottom: 1.5rem solid var(--header-border-color);
+  padding: 2em;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3em;
+  margin: 0;
+}
+
+#game-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1em;
+}
+
+#game-btn-start {
+  font-family: inherit;
+  background-color: var(--color-cyan);
+  border: none;
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+}
+
+#game-controls p {
+  margin: 0;
+}
+
+#game {
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 60px;
+  height: 35rem;
+  background-color: var(--color-game);
+  box-shadow: 0 0 40px var(--body-background-gradient-color-a);
+  position: relative;
+  top: 4rem;
+}
+
+#game-screen-gameover {
+  margin-left: auto;
+  margin-right: auto;
+  padding: 3rem;
+  background-color: var(--body-background-gradient-color-a);
+  border-radius: 60px;
+  width: 50vw;
+  text-align: center;
+  position: relative;
+  top: 4rem;
+  box-shadow: 0 0 15px var(--body-background-gradient-color-a);
 }
