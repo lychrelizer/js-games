@@ -5,4 +5,4 @@
 
 ## Description
 
-This is browser based **Breakout**-Game.
+This is a browser based **Breakout**-Game.

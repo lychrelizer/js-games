@@ -4,8 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript BreakOut</title>
-    <link rel="stylesheet" href="/styles/styles.css" />
-    <script src="/scripts/game.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="scripts/game.js" defer></script>
   </head>
-  <body></body>
+
+  <body>
+    <header>
+      <button id="game-btn-start">Start Game</button>
+      <p>Score: <span id="game-display-score">0</span></p>
+      <p>Lives: <span id="game-display-lives">0</span></p>
+    </header>
+    <main id="game">
+      <div id="ball"></div>
+      <div id="paddle"></div>
+      <section id="game-screen-gameover">
+        <h2>Game over</h2>
+        <p>Click Start-Button</p>
+      </section>
+    </main>
+  </body>
 </html>
