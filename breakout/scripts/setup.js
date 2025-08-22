@@ -9,4 +9,4 @@ const screenGameOverElem = document.getElementById("game-screen-gameover");
 
 const btnStartGame = document.getElementById("game-btn-start");
 
-btnStartGame.addEventListener("click", gameStart(e));
+btnStartGame.addEventListener("click", gameStart);
