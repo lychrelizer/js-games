@@ -91,10 +91,11 @@ h1 {
   width: 80vw;
   margin-left: auto;
   margin-right: auto;
-  border-radius: 60px;
+  border-radius: 40px;
   height: 35rem;
   background-color: var(--color-game);
   box-shadow: 0 0 40px var(--body-background-gradient-color-a);
+  box-shadow: inset 0 0 35px rgba(55, 55, 255, 0.6);
   position: relative;
   top: 4rem;
 }
