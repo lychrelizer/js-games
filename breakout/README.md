@@ -11,6 +11,11 @@ This is a browser based **Breakout**-Game.
 > This game is absolutely not mobile optimized. It is generally not optimized in any form.
 
 ## Controls
+
 - ⬅️: Move paddle left
-- ➡️: Move paddle right 
+- ➡️: Move paddle right
 - Space: launch ball
+
+## Todo
+
+Improve overall responsiveness
