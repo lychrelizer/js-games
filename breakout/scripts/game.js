@@ -12,8 +12,9 @@ function resetGame() {
 function gameStart(e) {
   e.preventDefault();
   resetGame();
-  cancelAnimationFrame(animationRepeat);
-  animationRepeat = requestAnimationFrame(update);
+  //cancelAnimationFrame(animationRepeat);
+  //animationRepeat = requestAnimationFrame(update);
+  update();
 }
 
 function update() {
