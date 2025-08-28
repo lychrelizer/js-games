@@ -69,6 +69,23 @@ function waitingOnPaddle() {
     "px";
 }
 
+function lifeUpdater() {
+  livesDisplayElem.innerText = game.lives;
+}
+
+function stopper() {
+  game.started = false;
+  game.ballDir = [0, -5];
+  waitingOnPaddle();
+  window.cancelAnimationFrame(animationRepeat);
+}
+
+function fallOffEdge() {
+  game.lives--;
+  lifeUpdater();
+  stopper();
+}
+
 function ballMove() {
   let x = ballElem.offsetLeft;
   let y = ballElem.offsetTop;
@@ -76,11 +93,15 @@ function ballMove() {
   x += game.ballDir[0];
   y += game.ballDir[1];
 
-  if (x > containerDim.width - ballElem.offsetWidth - 25 || x < 25) {
+  if (x >= containerDim.width - ballElem.offsetWidth - 25 || x < 25) {
     game.ballDir[0] = game.ballDir[0] * -1;
   }
 
-  if (y > containerDim.height - ballElem.offsetHeight - 25 || y < 25) {
+  if (y > containerDim.height - ballElem.offsetHeight - 25) {
+    fallOffEdge();
+  }
+
+  if (y < 25) {
     game.ballDir[1] = game.ballDir[1] * -1;
   }
 
