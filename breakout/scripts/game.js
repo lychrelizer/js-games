@@ -68,4 +68,19 @@ function ballMove() {
 
   ballElem.style.top = y + "px";
   ballElem.style.left = x + "px";
+
+  isCollide(ballElem, paddleElem);
+}
+
+function isCollide(a, b) {
+  const aRect = a.getBoundingClientRect();
+  const bRect = b.getBoundingClientRect();
+
+  if (
+    aRect.top + aRect.height > bRect.top &&
+    aRect.left + aRect.width > bRect.left &&
+    aRect.left < bRect.left + bRect.width
+  ) {
+    game.ballDir[1] = game.ballDir[1] * -1;
+  }
 }

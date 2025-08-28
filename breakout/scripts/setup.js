@@ -14,7 +14,7 @@ const game = {
   started: false,
   score: 0,
   lives: MAX_LIVES,
-  ballDir: [5, 5, 5],
+  ballDir: [5, -5, 5],
 };
 
 let animationRepeat;
@@ -28,7 +28,6 @@ btnStartGame.addEventListener("click", gameStart);
 document.addEventListener("keydown", (e) => {
   e.preventDefault();
   let key = e.key;
-  console.log(key);
   if (key === "ArrowLeft") paddleElem.left = true;
   else if (key === "ArrowRight") paddleElem.right = true;
   else if (key === " ") game.started = true;
