@@ -56,7 +56,11 @@ function update() {
       ballMove();
     }
 
-    animationRepeat = requestAnimationFrame(update);
+    if (!game.gameOver) {
+      animationRepeat = requestAnimationFrame(update);
+      gameCycle++;
+      console.log(gameCycle);
+    }
   }
 }
 
