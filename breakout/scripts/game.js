@@ -39,9 +39,16 @@ function update() {
       paddleElem.offsetLeft <= containerDim.width - paddleElem.offsetWidth - 25
     ) {
       pCurrent += game.paddleAcc;
-    }
 
-    paddleElem.style.left = pCurrent + "px";
+      if (
+        pCurrent > 25 &&
+        pCurrent < containerDim.width - paddleElem.offsetWidth - 25
+      ) {
+        paddleElem.style.left = pCurrent + "px";
+      } else {
+        game.paddleAcc = 0;
+      }
+    }
 
     if (!game.started) {
       waitingOnPaddle();
