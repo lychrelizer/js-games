@@ -21,13 +21,24 @@ function update() {
   if (game.gameOver === false) {
     let pCurrent = paddleElem.offsetLeft;
 
-    if (paddleElem.left && paddleElem.offsetLeft > +25) {
-      pCurrent -= 5;
-    } else if (
-      paddleElem.right &&
-      paddleElem.offsetLeft < containerDim.width - paddleElem.offsetWidth - 25
+    // handle acc
+    if (paddleElem.left && game.paddleAcc > -16) {
+      game.paddleAcc--;
+    } else if (paddleElem.right && game.paddleAcc < 16) {
+      game.paddleAcc++;
+    } else {
+      if (game.paddleAcc < 0) {
+        game.paddleAcc++;
+      } else if (game.paddleAcc > 0) {
+        game.paddleAcc--;
+      }
+    }
+
+    if (
+      paddleElem.offsetLeft >= 25 &&
+      paddleElem.offsetLeft <= containerDim.width - paddleElem.offsetWidth - 25
     ) {
-      pCurrent += 5;
+      pCurrent += game.paddleAcc;
     }
 
     paddleElem.style.left = pCurrent + "px";
@@ -69,7 +80,11 @@ function ballMove() {
   ballElem.style.top = y + "px";
   ballElem.style.left = x + "px";
 
-  isCollide(ballElem, paddleElem);
+  if (isCollide(ballElem, paddleElem)) {
+    game.ballDir[1] = game.ballDir[1] * -1;
+    game.ballDir[0] =
+      (x - paddleElem.offsetLeft - paddleElem.offsetWidth / 2) / 10;
+  }
 }
 
 function isCollide(a, b) {
@@ -77,10 +92,12 @@ function isCollide(a, b) {
   const bRect = b.getBoundingClientRect();
 
   if (
-    aRect.top + aRect.height > bRect.top &&
-    aRect.left + aRect.width > bRect.left &&
+    aRect.top + aRect.height >= bRect.top &&
+    aRect.left + aRect.width >= bRect.left &&
     aRect.left < bRect.left + bRect.width
   ) {
-    game.ballDir[1] = game.ballDir[1] * -1;
+    return true;
   }
+
+  return false;
 }

@@ -15,6 +15,7 @@ const game = {
   score: 0,
   lives: MAX_LIVES,
   ballDir: [5, -5, 5],
+  paddleAcc: 0,
 };
 
 let animationRepeat;
