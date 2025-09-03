@@ -18,4 +18,6 @@ This is a browser based **Breakout**-Game.
 
 ## Todo
 
-Improve overall responsiveness
+- Improve overall responsiveness
+- Check game end
+- Remove bugs (getting stuck on paddle, in walls)
