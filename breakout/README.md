@@ -20,4 +20,7 @@ This is a browser based **Breakout**-Game.
 
 - Improve overall responsiveness
 - Check game end
+- style bricks
+- color bricks properly
+- check for no more lives left
 - Remove bugs (getting stuck on paddle, in walls)
