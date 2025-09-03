@@ -133,6 +133,15 @@ function ballMove() {
   ballElem.style.top = y + "px";
   ballElem.style.left = x + "px";
 
+  const tmpBricks = document.querySelectorAll(".brick");
+
+  for (let tBrick of tmpBricks) {
+    if (isCollide(tBrick, ballElem)) {
+      game.ballDir[1] *= -1;
+      gameElem.removeChild(tBrick);
+    }
+  }
+
   if (isCollide(ballElem, paddleElem)) {
     game.ballDir[1] = game.ballDir[1] * -1;
     game.ballDir[0] =
