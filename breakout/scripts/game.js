@@ -12,9 +12,27 @@ function resetGame() {
 function gameStart(e) {
   e.preventDefault();
   resetGame();
-  //cancelAnimationFrame(animationRepeat);
-  //animationRepeat = requestAnimationFrame(update);
+  setupBricks(12);
   update();
+}
+
+function setupBricks(num) {
+  const row = {
+    x: 50,
+    y: 50,
+  };
+
+  for (let x = 0; x < num; x++) {
+    brickMaker(row);
+    row.x += 100;
+  }
+}
+
+function brickMaker(row) {
+  let div = document.createElement("div");
+  div.classList.add("brick");
+  div.style.left = row.x + "px";
+  gameElem.appendChild(div);
 }
 
 function update() {
@@ -58,8 +76,6 @@ function update() {
 
     if (!game.gameOver) {
       animationRepeat = requestAnimationFrame(update);
-      gameCycle++;
-      console.log(gameCycle);
     }
   }
 }

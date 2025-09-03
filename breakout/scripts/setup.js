@@ -8,7 +8,6 @@ const btnStartGame = document.getElementById("game-btn-start");
 
 // basic game setup
 const MAX_LIVES = 3;
-let gameCycle = 0;
 
 const game = {
   gameOver: true,

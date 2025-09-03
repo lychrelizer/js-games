@@ -132,3 +132,14 @@ h1 {
   left: calc(50% - 75px);
   bottom: 20px;
 }
+
+.brick {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 50px;
+  padding: 5px;
+  color: white;
+  background-color: cyan;
+}
