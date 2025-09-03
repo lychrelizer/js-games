@@ -12,17 +12,21 @@ function resetGame() {
 function gameStart(e) {
   e.preventDefault();
   resetGame();
-  setupBricks(12);
+  setupBricks(12 * 4);
   update();
 }
 
 function setupBricks(num) {
   const row = {
-    x: 50,
+    x: (containerDim.width % 100) / 2,
     y: 50,
   };
 
   for (let x = 0; x < num; x++) {
+    if (row.x > containerDim.width - 100) {
+      row.y += 70;
+      row.x = (containerDim.width % 100) / 2;
+    }
     brickMaker(row);
     row.x += 100;
   }
@@ -32,6 +36,7 @@ function brickMaker(row) {
   let div = document.createElement("div");
   div.classList.add("brick");
   div.style.left = row.x + "px";
+  div.style.top = row.y + "px";
   gameElem.appendChild(div);
 }
 
